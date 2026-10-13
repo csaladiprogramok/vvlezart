@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irány külföld – VakációVágyó 2027</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #17324d; min-height: 100vh; background: radial-gradient(circle at top left,#fff4cf 0%,transparent 34%),linear-gradient(135deg,#f3d7a4,#fffaf0); }
+    .navbar { background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,.1); font-family: 'Segoe UI', sans-serif; }
+    .navbar .logo { font-size: 1.5em; font-weight: 700; text-decoration: none; color: yellowgreen; }
+    .navbar .exit-x { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; margin: -7px; border-radius: 50%; color: #333; text-decoration: none; font-size: 27px; font-weight: 600; line-height: 1; transition: background .2s ease; }
+    .navbar .exit-x:hover, .navbar .exit-x:focus-visible { background: rgba(154,205,50,.12); }
+    main { min-height: calc(100vh - 74px); display: flex; align-items: center; justify-content: center; padding: 24px 12px; }
+    .coming-soon { display: flex; align-items: center; justify-content: center; gap: 16px; width: 100%; text-align: center; }
+    .coming-soon h1 { margin: 0; font-size: clamp(30px,5vw,52px); font-weight: 900; letter-spacing: -1px; line-height: 1.12; padding: 5px 0; background: linear-gradient(90deg,#087f8c,#00b8c8,#ffb703,#ff8c42,#087f8c); background-size: 300% auto; -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 6px 12px rgba(8,127,140,.13)); animation: colors 5s linear infinite, soonFloat 2.8s ease-in-out infinite; }
+    .coming-line { width: min(150px,15vw); height: 3px; border-radius: 99px; background: linear-gradient(90deg,transparent,#00a9b7,#ffb703,transparent); }
+    @keyframes colors { from { background-position: 0 center; } to { background-position: 300% center; } }
+    @keyframes soonFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @media (max-width: 380px) { .coming-soon { gap: 5px; } .coming-soon h1 { font-size: clamp(19px, 6vw, 24px); letter-spacing: -.5px; } .coming-line { width: 5vw; } }
+    @media (max-width: 620px) { .coming-soon { gap: 10px; } .coming-soon h1 { font-size: clamp(22px,6.5vw,42px); white-space: normal; overflow-wrap: normal; } .coming-line { width: min(95px,13vw); flex-shrink: 1; } }
+    /* ===== NYÁRI VISSZASZÁMLÁLÓ ===== */
+    #summer-countdown {
+      /* 💻 ASZTALI / LAPTOP: ezt állítsd */
+      top: 80px;
+
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 900;
+
+      width: min(76%, 520px);
+      min-height: 28px;
+      padding: 2px 8px;
+      box-sizing: border-box;
+
+      background: rgba(255,255,255,.96);
+      border-radius: 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      overflow: hidden;
+
+      color: #155e75;
+      font-size: clamp(11px, 1.5vw, 14px);
+      font-weight: 800;
+      line-height: 1;
+
+      box-shadow: 0 3px 9px rgba(0,0,0,.12);
+    }
+
+    #summer-countdown::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 -35%;
+      width: 30%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,215,0,.62),
+        transparent
+      );
+      animation: shine 4s linear infinite;
+    }
+
+    #summer-countdown .sun,
+    #summer-countdown .palm,
+    #summer-countdown .text {
+      position: relative;
+      z-index: 1;
+    }
+
+    #summer-countdown .text {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+
+    #summer-countdown .sun,
+    #summer-countdown .palm {
+      flex: 0 0 auto;
+      font-size: 15px;
+    }
+
+    #summer-countdown .sun {
+      animation: sun 2.4s ease-in-out infinite;
+    }
+
+    #summer-countdown .palm {
+      transform-origin: bottom center;
+      animation: palm 2.2s ease-in-out infinite;
+    }
+
+    #summer-countdown .days-highlight {
+      color: #ff4f87;
+      font-size: inherit;
+      font-weight: 900;
+      display: inline-block;
+    }
+
+    @keyframes shine {
+      from { left: -35%; }
+      to   { left: 120%; }
+    }
+
+    @keyframes sun {
+      0%,100% { transform: rotate(-8deg) scale(1); }
+      50%     { transform: rotate(8deg) scale(1.08); }
+    }
+
+    @keyframes palm {
+      0%,100% { transform: rotate(-4deg); }
+      50%     { transform: rotate(4deg); }
+    }
+
+    /* 📱 MOBIL: külön állítható TOP */
+    @media (max-width: 700px) {
+      #summer-countdown {
+        top: 68px;   /* 📱 MOBILON EZT ÁLLÍTSD */
+
+        width: 78%;
+        max-width: 360px;
+        min-height: 25px;
+        padding: 2px 6px;
+        gap: 3px;
+        border-radius: 7px;
+
+        font-size: clamp(9px, 2.8vw, 11px);
+      }
+
+      #summer-countdown .sun,
+      #summer-countdown .palm {
+        font-size: 13px;
+      }
+    }
+
+    /* Keskeny telefonon csak a méret változik, a TOP nem */
+    @media (max-width: 380px) {
+      #summer-countdown {
+        top: 12%;
+        width: 82%;
+        max-width: 300px;
+        font-size: 9px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      #summer-countdown .sun,
+      #summer-countdown .palm {
+        font-size: 12px;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="indexlezart.html" class="logo">VakációVágyó</a>
+    <a href="indexlezart.html" class="exit-x" aria-label="Vissza a főoldalra" title="Vissza a főoldalra">✕</a>
+  </header>
+  <!-- NYÁRI VISSZASZÁMLÁLÓ -->
+  <div id="summer-countdown">
+    <span class="sun">☀️</span>
+    <span class="text">
+      MÁR CSAK
+      <span class="days-highlight"><span id="days">...</span> NAP</span>
+      ÉS ITT A NYÁR!
+    </span>
+    <span class="palm">🌴</span>
+  </div>
+
+
+
+  <main>
+    <section class="coming-soon" aria-label="Irány külföld">
+      <div class="coming-line"></div>
+      <h1>IRÁNY KÜLFÖLD<br><br>Hamarosan...</h1>
+      <div class="coming-line"></div>
+    </section>
+  </main>
+<script>
+function updateCountdown() {
+  const now = new Date();
+  const text = document.querySelector("#summer-countdown .text");
+  const year = now.getFullYear();
+
+  const june1 = new Date(year, 5, 1, 0, 0, 0);
+  const sep1  = new Date(year, 8, 1, 0, 0, 0);
+
+  // Június 1-től augusztus 31-ig nyári felirat
+  if (now >= june1 && now < sep1) {
+    text.innerHTML = '„NYÁR VAN, ALIG FÜRDŐRUHÁBAN...”';
+    return;
+  }
+
+  // Szeptember 1-től május 31-ig visszaszámlálás
+  const target =
+    now >= sep1
+      ? new Date(year + 1, 5, 1, 0, 0, 0)
+      : june1;
+
+  const days = Math.ceil((target - now) / 86400000);
+
+  text.innerHTML =
+    'MÁR CSAK <span class="days-highlight"><span id="days">' +
+    days +
+    '</span> NAP</span> ÉS ITT A NYÁR!';
+}
+
+updateCountdown();
+setInterval(updateCountdown, 60000);
+</script>
+</body>
+</html>
