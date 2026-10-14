@@ -6,12 +6,12 @@
   <title>Irány külföld</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #17324d; min-height: 100vh; background: radial-gradient(circle at top left,#fff4cf 0%,transparent 34%),linear-gradient(135deg,#f3d7a4,#fffaf0); }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #17324d; min-height: 100dvh; display:flex; flex-direction:column; background: radial-gradient(circle at top left,#fff4cf 0%,transparent 34%),linear-gradient(135deg,#f3d7a4,#fffaf0); }
     .navbar { background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,.1); font-family: 'Segoe UI', sans-serif; }
     .navbar .logo { font-size: 1.5em; font-weight: 700; text-decoration: none; color: yellowgreen; }
     .navbar .exit-x { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; margin: -7px; border-radius: 50%; color: #333; text-decoration: none; font-size: 27px; font-weight: 600; line-height: 1; transition: background .2s ease; }
     .navbar .exit-x:hover, .navbar .exit-x:focus-visible { background: rgba(154,205,50,.12); }
-    main{position:relative;isolation:isolate;min-height:calc(100dvh - 60px);display:flex;align-items:center;padding:105px clamp(22px,5vw,80px) 65px;overflow:hidden;color:white}
+    main{position:relative;isolation:isolate;flex:1 0 auto;min-height:0;display:flex;align-items:center;padding:105px clamp(22px,5vw,80px) 65px;overflow:hidden;color:white}
     .slides,.shade{position:absolute;inset:0;z-index:-1;pointer-events:none}
     .slide{position:absolute;inset:0;background-position:center;background-size:cover;opacity:0;animation:beach 25s linear infinite}
     .slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85');animation-delay:-0s}
@@ -176,7 +176,7 @@
     .travel h1 { overflow-wrap:anywhere; }
     .description { overflow-wrap:break-word; }
     @media (max-width: 700px) {
-      main { min-height:calc(100dvh - 60px); padding:100px 18px 42px; align-items:flex-start; }
+      main { padding:100px 18px 42px; align-items:flex-start; }
       .travel { width:100%; }
       .travel h1 { font-size:clamp(34px,10vw,64px); line-height:1.06; letter-spacing:-.035em; margin-bottom:16px; }
       .subtitle { font-size:clamp(21px,6vw,32px); line-height:1.2; margin-bottom:16px; }
