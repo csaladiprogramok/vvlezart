@@ -179,7 +179,7 @@
       .navbar { padding: 12px 32px; gap:12px; min-height:66px; }
       .navbar .logo { font-size:1.5em; min-width:0; }
       .navbar .exit-x { flex:0 0 42px; margin:0; }
-      #summer-countdown { top:75px; width:calc(100% - 32px); max-width:360px; padding:5px 7px; min-height:30px; }
+      #summer-countdown { top:68px; width:calc(100% - 32px); max-width:360px; padding:5px 7px; min-height:30px; }
       #summer-countdown .text { white-space:normal; line-height:1.25; font-size:clamp(10px,2.8vw,12px); }
       main { min-height:calc(100svh - 66px); padding:100px 18px 42px; align-items:flex-start; }
       .travel { width:100%; }
@@ -191,7 +191,7 @@
       .shade { background:linear-gradient(90deg,rgba(6,31,52,.9),rgba(6,31,52,.58)); }
     }
     @media (max-width: 380px) {
-      #summer-countdown { top:75px; width:calc(100% - 24px); max-width:340px; }
+      #summer-countdown { top:12%; width:calc(100% - 24px); max-width:340px; }
       main { padding:100px 14px 35px; }
       .travel h1 { font-size:clamp(31px,9.4vw,38px); }
       .description { font-size:15px; }
@@ -200,6 +200,16 @@
       main { padding-left:32px; padding-right:32px; }
       .travel h1 { font-size:clamp(55px,8vw,80px); }
       .travel-button { font-size:14px; }
+    }
+
+    /* A főoldali mintával egyező visszaszámláló-tipográfia és méretezés. */
+    #summer-countdown { font-family:'Segoe UI',Arial,sans-serif; }
+    @media (max-width:700px) {
+      #summer-countdown { width:78%;max-width:360px;min-height:25px;padding:2px 6px;gap:3px;border-radius:7px;font-size:clamp(9px,2.8vw,11px); }
+      #summer-countdown .text { white-space:nowrap;line-height:1.05;font-size:inherit; }
+    }
+    @media (max-width:380px) {
+      #summer-countdown { width:82%;max-width:300px;font-size:9px;padding-left:5px;padding-right:5px; }
     }
   </style>
 </head>
@@ -230,7 +240,7 @@
       <p class="subtitle">Vár a külföldi riviéra!</p>
       <p class="description" style="text-align: justify;">Családi utak Egyiptomba, Ománba, Dubajba, Ciprusra, Máltára, Törökországba, a Kanári-szigetekre, Dominikára és Mauritiusra, all inclusive ellátással. Indulás Pozsonyból, Bécsből vagy Budapestről.</p>
       <nav class="travel-buttons" aria-label="Utazási lehetőségek">
-        <a class="travel-button" href="#">SZÁLLÁSUNK OLDALA</a>
+        <a class="travel-button" href="szallasunk.html">SZÁLLÁSUNK</a>
         <a class="travel-button" href="latnivalok.html">LÁTNIVALÓK</a>
         <a class="travel-button" href="fakultativprogramok.html">FAKULTATÍV PROGRAMOK</a>
       </nav>

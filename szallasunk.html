@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fakultatív programok</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;color:#17324d;min-height:100vh;
+  background:radial-gradient(circle at top left,#fff4cf 0%,transparent 34%),linear-gradient(135deg,#f3d7a4,#fffaf0)
+}
+.page{width:min(1050px,100%);margin:auto;padding:22px 16px 55px}
+.header{
+  width:min(900px,100%);margin:0 auto 18px;background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.95);border-radius:20px;padding:18px;
+  box-shadow:0 12px 28px rgba(75,60,25,.12)
+}
+h1{
+  font-size:clamp(25px,5vw,38px);font-weight:900;letter-spacing:-1px;
+  background:linear-gradient(90deg,#087f8c,#00b8c8,#ffb703,#ff8c42,#087f8c);
+  background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:colors 5s linear infinite
+}
+h2{
+  font-size:clamp(25px,5vw,38px);font-weight:900;letter-spacing:-1px;
+  background:linear-gradient(90deg,#087f8c,#00b8c8,#ffb703,#ff8c42,#087f8c);
+  background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:colors 5s linear infinite
+}
+h3{
+  font-size:clamp(25px,5vw,38px);font-weight:900;letter-spacing:-1px;
+  background:linear-gradient(90deg,#087f8c,#00b8c8,#ffb703,#ff8c42,#087f8c);
+  background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:colors 5s linear infinite
+}
+.intro{margin-top:9px;color:#60727b;font-size:14px;line-height:1.55}
+.cards{width:min(900px,100%);margin:auto;display:grid;grid-template-columns:1fr;gap:16px}
+.offer-card{
+  overflow:hidden;background:rgba(255,255,255,.97);border-radius:20px;
+  box-shadow:0 14px 35px rgba(75,60,25,.14);border:1px solid rgba(255,255,255,.9)
+}
+.slider{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e8eeee}
+.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
+.slide.active{opacity:1}
+.dots{position:absolute;left:0;right:0;bottom:9px;display:flex;justify-content:center;gap:6px;z-index:2}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.dot.active{background:#fff;transform:scale(1.2)}
+.card-body{padding:15px}
+.hotel-name{font-size:20px;font-weight:900;color:#087f8c;margin-bottom:7px}
+.offer-copy{font-size:13px;line-height:1.5;color:#60727b;margin-bottom:14px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.action{
+  min-height:43px;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:10px 11px;border-radius:11px;text-decoration:none;font-size:12px;font-weight:900;
+  transition:.2s
+}
+.hotel-btn{background:linear-gradient(135deg,#00b4c4,#087f8c);color:#fff;box-shadow:0 7px 16px rgba(8,127,140,.22)}
+.sights-btn{background:#fff4d6;color:#9a6400;border:1px solid rgba(255,183,3,.35)}
+.action:hover{transform:translateY(-2px)}
+.back{display:inline-flex;margin:0 0 15px;text-decoration:none;color:#087f8c;font-size:13px;font-weight:900}
+@keyframes colors{from{background-position:0 center}to{background-position:300% center}}
+@media(max-width:620px){
+  .page{padding:12px 9px 35px}
+  .header{border-radius:17px;padding:14px}
+  .cards{grid-template-columns:1fr;gap:12px}
+  .offer-card{border-radius:17px}
+  .card-body{padding:13px}
+  .hotel-name{font-size:19px}
+  .actions{grid-template-columns:1fr 1fr}
+  .action{font-size:11px;padding:9px 7px}
+}
+@media(max-width:350px){.actions{grid-template-columns:1fr}}
+.coming-soon{
+  margin-top:54px;
+  margin-bottom:22px;
+  padding:0 12px;
+}
+.coming-soon h2{
+  line-height:1.12;
+  overflow:visible;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+@media(max-width:620px){
+  .hero h1{
+    padding-top:8px;
+    line-height:1.18;
+  }
+  .coming-soon{
+    gap:10px;
+    margin-top:46px;
+    margin-bottom:18px;
+    padding:0 4px;
+  }
+  .coming-soon h2{
+    font-size:clamp(28px,8.5vw,42px);
+    white-space:nowrap;
+  }
+  .coming-line{
+    width:min(95px,13vw);
+  }
+}
+
+    .coming-line {
+      width: min(150px, 15vw);
+      height: 3px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, transparent, #00a9b7, #ffb703, transparent)
+    }
+
+/* A referenciaoldal animált, lebegő „Hamarosan...” felirata */
+.coming-soon{display:flex;align-items:center;justify-content:center;gap:16px;width:100%;text-align:center}
+.coming-soon h2{flex:0 1 auto;min-width:0;font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#087f8c,#00b8c8,#ffb703,#ff8c42,#087f8c);background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 12px rgba(8,127,140,.13));animation:colors 5s linear infinite,soonFloat 2.8s ease-in-out infinite}
+@keyframes soonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(max-width:620px){.coming-soon{gap:10px}.coming-soon h2{font-size:clamp(24px,8vw,42px)}.coming-line{flex:1 1 0;min-width:0;max-width:95px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="header">
+    <a class="back" href="iranykulfold.html">← Vissza a főoldalra</a>
+    <h2>SZÁLLÁSUNK</h2>
+    <h3>KÜLFÖLD</h3>
+    <section class="coming-soon" aria-label="Hamarosan">
+        <div class="coming-line"></div>
+        <h2>Hamarosan...</h2>
+        <div class="coming-line"></div>
+      </section>
+     
+     <br>
+    <!-------<p class="intro" style="text-align: justify;">Válogass a kiemelt szállásajánlatok közül. <br><br><b><i>További javaslat: Nézd meg a többi ajánlatot is a főoldalon utazási irodánként válogatva!</i></b> <span class="intro" style="color: red;"> <br><b> Figyelem!</b> Ez a desztináció nem tartozik a jelenleg futó <b>előfoglalási akciók</b> közé.</span></p>----->
+  </section>
+<script>
+document.querySelectorAll('.slider').forEach((slider, sliderIndex) => {
+  const slides = [...slider.querySelectorAll('.slide')];
+  const dots = [...slider.querySelectorAll('.dot')];
+  let current = 0;
+  // Kis eltérés, hogy több kártya ne pontosan egyszerre váltson.
+  setTimeout(() => {
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+      dots[current]?.classList.add('active');
+    }, 5000);
+  }, sliderIndex * 450);
+});
+</script>
+</body>
+</html>
