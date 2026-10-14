@@ -27,14 +27,17 @@
 <body>
 <header class="navbar"><a class="logo" href="indexlezart.html">VakációVágyó</a><a class="exit-x" href="indexlezart.html" aria-label="Vissza a főoldalra" title="Vissza a főoldalra">✕</a></header>
 <div id="summer-countdown" aria-live="off"><span class="sun">☀️</span><span class="text">MÁR CSAK <span class="days-highlight">… NAP</span> ÉS ITT A NYÁR!</span><span class="palm">🌴</span></div>
-<main class="content"><section class="intro-card" aria-label="Tájékoztató"><p>A közelgő külföldi nyaralásunkhoz itt láthatod, hogy összesen kinek mekkora összeget és milyen határidőig kell összegyűjtenie. <br> <b><i>Tekintsd meg Te is a részleteket!</b></i></p></section>
-<!-- A Hamarosan felirat későbbre elmentve, jelenleg nem jelenik meg:
+
+<!---<main class="content"><section class="intro-card" aria-label="Tájékoztató"><p>A foglalásunk után a közelgő külföldi nyaralásunkhoz itt láthatod, hogy összesen kinek mekkora összeget és milyen határidőig kell összegyűjtenie, hogy legyen egy szipi - szupi külföldi utunk. <br><br> <b><i>Tekintsd meg Te is a részleteket!</b></i></p></section> ---->
+
 <section class="coming-soon" aria-label="Hamarosan"><div class="coming-line"></div><h2>Hamarosan...</h2><div class="coming-line"></div></section>
--->
+
+
+<!---
 <section class="counter-card" aria-label="Összesített számláló"><h1 class="total">1 400 000 Ft</h1><div class="total-label">ÖSSZESEN</div>
 <div class="person"><div class="person-head"><span class="person-name">Orosz Sándor</span><span class="person-amount">600 000 Ft</span></div><div class="track" role="progressbar" aria-label="Orosz Sándor" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="fill"></div></div><div class="person-foot"><span class="percent">100%</span><span class="deadline">Határidő: <strong>2026. október 10.</strong></span></div></div>
 <div class="person"><div class="person-head"><span class="person-name">Orosz Kristóf</span><span class="person-amount">600 000 Ft</span></div><div class="track" role="progressbar" aria-label="Orosz Kristóf" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="fill"></div></div><div class="person-foot"><span class="percent">100%</span><span class="deadline">Határidő: <strong>2026. október 10.</strong></span></div></div>
-<div class="person"><div class="person-head"><span class="person-name">Orosz Szilvia</span><span class="person-amount">200 000 Ft</span></div><div class="track" role="progressbar" aria-label="Orosz Szilvia" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="fill"></div></div><div class="person-foot"><span class="percent">100%</span><span class="deadline">Határidő: <strong>Megadásra vár</strong></span></div></div>
-</section></main>
+<div class="person"><div class="person-head"><span class="person-name">Orosz Szilvia</span><span class="person-amount">200 000 Ft</span></div><div class="track" role="progressbar" aria-label="Orosz Szilvia" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="fill"></div></div><div class="person-foot"><span class="percent">100%</span><span class="deadline">Határidő: <strong>2026. október 10.</strong></span></div></div>
+</section></main> -->
 <script>function updateCountdown(){const now=new Date(),y=now.getFullYear(),jun=new Date(y,5,1),sep=new Date(y,8,1),text=document.querySelector('#summer-countdown .text');if(now>=jun&&now<sep){text.textContent='„NYÁR VAN, ALIG FÜRDŐRUHÁBAN...”';return}const target=now>=sep?new Date(y+1,5,1):jun;const days=Math.ceil((target-now)/86400000);text.innerHTML='MÁR CSAK <span class="days-highlight">'+days+' NAP</span> ÉS ITT A NYÁR!'}updateCountdown();setInterval(updateCountdown,60000)</script>
 </body></html>
